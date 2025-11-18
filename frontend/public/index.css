@@ -1,0 +1,79 @@
+/* Background image */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Blur overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(12px) brightness(0.6);
+  z-index: -1;
+}
+
+/* Main quiz card */
+.card {
+  max-width: 600px;
+  padding: 30px;
+  margin: 80px auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* Question text */
+.question {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.option-btn {
+  width: 90%;
+  margin: 10px auto;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+}
+
+.option-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* Correct / Wrong animations */
+.correct {
+  background: #2ecc71 !important;
+  color: white;
+}
+
+.wrong {
+  background: #e74c3c !important;
+  color: white;
+}
+
+/* Finish page styling */
+.finish { 
+  padding: 60px;
+}
