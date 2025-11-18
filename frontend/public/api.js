@@ -1,12 +1,13 @@
-import { supabase } from "./supabase.js";
+const API_URL = "https://cloud-quiz-backend.onrender.com";
 
 export async function fetchQuizzes() {
-  const { data, error } = await supabase.from("questions").select("*");
+  try {
+    const res = await fetch(`${API_URL}/questions`);
+    if (!res.ok) throw new Error("Failed to fetch questions!");
 
-  if (error) {
-    console.error("Supabase Error:", error);
+    return await res.json();
+  } catch (err) {
+    console.error("API Error:", err);
     return [];
   }
-
-  return data;
 }
